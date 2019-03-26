@@ -18,14 +18,14 @@ def save_expanded():
     #Resize from 32x32 to 150x150, interpolation for enhanced resolution
     
     for img in (x_train):
-        newImage = cv2.resize(img, dsize = (60, 60), interpolation = cv2.INTER_CUBIC)
+        newImage = cv2.resize(img, dsize = (150, 150), interpolation = cv2.INTER_CUBIC)
         newImage = (newImage-np.min(newImage))/(np.max(newImage) - np.min(newImage)) #Normalize
         x_train_new.append(newImage)
         
     x_train_new = np.array(x_train_new)
     
     for img in (x_test):
-        newImage = cv2.resize(img, dsize = (60, 60), interpolation = cv2.INTER_CUBIC)
+        newImage = cv2.resize(img, dsize = (150, 150), interpolation = cv2.INTER_CUBIC)
         newImage = (newImage-np.min(newImage))/(np.max(newImage) - np.min(newImage))
         x_test_new.append(newImage)
         
@@ -36,8 +36,8 @@ def save_expanded():
     plt.show()
     
     #Save new image arrays
-    np.save("data/expandedTrain.npy", x_train_new)
-    np.save("data/expandedTest.npy", x_test_new)
+    np.save("data/trainA.npy", x_train_new)
+    np.save("data/trainB.npy", x_test_new)
 
 '''
 def save_expanded(path, save_name, dim):
@@ -58,21 +58,6 @@ def save_expanded(path, save_name, dim):
     np.save(save_name, imgList)
     
 '''
-    
-def convert_format(path, label):
-    
-    #Reads all the images in a given file directory, and preprocesses them into use for the network
-    files = os.listdir(path)
-    imgList = []
-    labelList = []
-    print("{} and {}".format(path, files[0]))
-    for i,file in enumerate(files):
-        img = cv2.imread(os.path.join(path, file), 1)
-        img = cv2.resize(img, dsize = (60, 60), interpolation = cv2.INTER_CUBIC)
-        imgList.append(img)
-        labelList.append(label)
-    return imgList, labelList
-
 def encode_oneHot(labels, idx):
     
     encoded_labels = []
