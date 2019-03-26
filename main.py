@@ -22,10 +22,10 @@ def main():
     #zsl_dict = load_embeddings("glove.6B.100d.txt", train_classes, zsl_classes)    
 
     
-    x_train_a = np.load("data/expandedTrain.npy")
-    #x_train_b = np.load("data/trainB.npy")
+    x_train_a = np.load("data/trainA.npy")
+    x_train_b = np.load("data/trainB.npy")
             
-    hparams = tf.contrib.training.HParams(input_shape = (None, 60, 60, 3),
+    hparams = tf.contrib.training.HParams(input_shape = (None, 150, 150, 3),
                                           embed_shape = (None, 100),
                                           batch_size = 1,
                                           name = "ZSModelCycleAdam01",
