@@ -9,8 +9,8 @@ def save_expanded():
 
     #Load directly from cifar10
     training_set, testing_set = tf.keras.datasets.cifar10.load_data()
-    x_train, _ = training_set
-    x_test, _ = testing_set
+    x_train, y_train = training_set
+    x_test, y_test = testing_set
     
     x_train_new = []
     x_test_new = []
@@ -18,14 +18,14 @@ def save_expanded():
     #Resize from 32x32 to 150x150, interpolation for enhanced resolution
     
     for img in (x_train):
-        newImage = cv2.resize(img, dsize = (150, 150), interpolation = cv2.INTER_CUBIC)
+        newImage = cv2.resize(img, dsize = (60, 60), interpolation = cv2.INTER_CUBIC)
         newImage = (newImage-np.min(newImage))/(np.max(newImage) - np.min(newImage)) #Normalize
         x_train_new.append(newImage)
         
     x_train_new = np.array(x_train_new)
     
     for img in (x_test):
-        newImage = cv2.resize(img, dsize = (150, 150), interpolation = cv2.INTER_CUBIC)
+        newImage = cv2.resize(img, dsize = (60, 60), interpolation = cv2.INTER_CUBIC)
         newImage = (newImage-np.min(newImage))/(np.max(newImage) - np.min(newImage))
         x_test_new.append(newImage)
         
@@ -36,8 +36,10 @@ def save_expanded():
     plt.show()
     
     #Save new image arrays
-    np.save("data/trainA.npy", x_train_new)
-    np.save("data/trainB.npy", x_test_new)
+    np.save("data/expandedTrain.npy", x_train_new)
+    np.save("data/expandedTest.npy", x_test_new)
+    np.save("data/expandedTrainY.npy", y_train)
+    np.save("data/expandedTestY.npy", y_test)
 
 '''
 def save_expanded(path, save_name, dim):
@@ -58,6 +60,21 @@ def save_expanded(path, save_name, dim):
     np.save(save_name, imgList)
     
 '''
+    
+def convert_format(path, label):
+    
+    #Reads all the images in a given file directory, and preprocesses them into use for the network
+    files = os.listdir(path)
+    imgList = []
+    labelList = []
+    print("{} and {}".format(path, files[0]))
+    for i,file in enumerate(files):
+        img = cv2.imread(os.path.join(path, file), 1)
+        img = cv2.resize(img, dsize = (60, 60), interpolation = cv2.INTER_CUBIC)
+        imgList.append(img)
+        labelList.append(label)
+    return imgList, labelList
+
 def encode_oneHot(labels, idx):
     
     encoded_labels = []
@@ -99,7 +116,11 @@ def load_embeddings(path, wanted_embs, zero_shot_classes, save_embed = False):
         np.save("embedding_matrix.npy", embed_matrix)
         
     return word_dict
-    
+   
+def cifar10_wlabel(one_hot_v, class_ref):
+    idx = np.argmax(one_hot_v)
+    return class_ref[idx]
+
 def closest_vectors(path, train_classes, embed_dict):
     
     embed_file = open(path, 'r')
