@@ -237,8 +237,8 @@ class zsCycle:
 
                 scope.reuse_variables()
 
-                self.fake_A2B = self.generator(self.fake_A, 'g_B')
-                self.fake_B2A = self.reverse_generator(self.fake_B, 'g_A')
+                self.fake_A2B = self.reverse_generator(self.fake_A, 'g_B')
+                self.fake_B2A = self.generator(self.fake_B, 'g_A')
 
                 '''
                 self.fakeRDisc = tf.gradients(self.fake_A2B, self.fake_A)
