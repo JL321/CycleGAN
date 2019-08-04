@@ -16,10 +16,8 @@ def main():
 
     zsl_dict = None
     train_classes = ['airplane', 'automobile', 'bird', 'cat', 'deer', 'dog', 'frog', 'horse', 'ship', 'truck']
-    zsl_classes = ['bicycle', 'helicopter', 'submarine']
     seen_labels = []
-    relevant_classes = train_classes + zsl_classes
-    zsl_dict = load_embeddings("glove.6B.100d.txt", train_classes, zsl_classes)    
+    relevant_classes = train_classes 
     
     x_train_a = np.load("data/trainA.npy")
     x_train_b = np.load("data/trainB.npy")
@@ -37,7 +35,7 @@ def main():
     newModel = zsCycle(hparams)
     if train:
     
-        newModel.train(x_train_a, y_train_a, x_train_b, 100, zsl_dict, train_classes)
+        newModel.train(x_train_a, y_train_a, x_train_b, 100 train_classes)
         print("FINISHED TRAINING")    
         newModel.save(0)
     
