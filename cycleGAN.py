@@ -489,12 +489,7 @@ class zsCycle:
                             val += 1
                         sum_loss, da_grad = self.sess.run([self.d_loss_sum_as, self.var_Ad], feed_dict = {self.img_A: batch_imgA, self.fake_A_sample: fakeA_sample})
                     '''
-                    self.writer.add_summary(da_grad, step)
-    
-                    #print(grad2)
-                    #print(anotherV)
-                    #print('------------------------------')
-                    
+                    self.writer.add_summary(da_grad, step)          
                     self.writer.add_summary(sum_loss, step)
                     step += 1 
                     self.num_fake += self.batch_size
@@ -507,42 +502,6 @@ class zsCycle:
                         plt.imshow(pred_img[0])
                         plt.imshow(pred_img[1])
                         plt.show()
-                        
-                        #L2 testing for embeddings
-                        '''
-                        norms = []
-                        randIdx = np.random.randint(0, data_A.shape[0], size = 500)
-                        corresp_data = data_A[randIdx]
-                        corresp_label = label_A[randIdx]
-                        fake_emb = []
-                        
-                        word_label = [cifar10_wlabel(lab, train_class) for lab in corresp_label]
-                        embed_label = [lookup_embed[word] for word in word_label]
-                        
-                        for img, real_embed in zip(corresp_data, embed_label):
-                            img = np.expand_dims(img, axis = 0)
-                            fake_embed = self.sess.run([self.fake_B], feed_dict = {self.img_A: img})
-                            fake_emb.append(fake_embed)
-                            norms.append(np.linalg.norm(np.array(real_embed)-np.array(fake_embed))) #Default frobenius norm
-                        
-                        plt.title("Norms with correct embeddings (l2)")
-                        plt.plot(norms)
-                        plt.show()
-                        
-                        optimal_norm = []
-                        
-                        for fake_embed in fake_emb:
-                            min_norm = 1000
-                            for word in train_class:
-                                trial_norm = np.linalg.norm(np.array(lookup_embed[word]) - np.array(fake_embed))
-                                if (trial_norm < min_norm):
-                                    min_norm = trial_norm
-                            optimal_norm.append(min_norm)
-                        
-                        plt.title("Optimal Norms")
-                        plt.plot(optimal_norm)
-                        plt.show()
-                        '''
                         print("Saving model at step {}".format(step))
                         print('------------------------------------')
                         self.save(step)
