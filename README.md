@@ -20,7 +20,7 @@ Packages Required in Environment:
 - Numpy
 - Matplotlib
 
-## Running
+## Execution
 
 To execute the program, use the following command whilst in terminal:
 ```
