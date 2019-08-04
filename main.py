@@ -1,6 +1,5 @@
 import numpy as np
 import tensorflow as tf
-from Preprocessing import save_expanded, encode_oneHot, load_embeddings, convert_format, closest_vectors
 from model import zsModel
 import matplotlib.pyplot as plt
 from cycleGAN import zsCycle
