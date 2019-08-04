@@ -20,6 +20,8 @@ Packages Required in Environment:
 - Numpy
 - Matplotlib
 
+GPU training is preferred.
+
 ## Execution
 
 To execute the program, use the following command whilst in terminal:
