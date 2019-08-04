@@ -8,7 +8,7 @@ Cycle Consistent GANs are an adaptation of Generative Adversarial Networks, in w
 
 Sample mappings shown above.
 
-![alt text](https://camo.githubusercontent.com/2fadde78dccf4d61f1294933c3e8083c07a303c7/68747470733a2f2f6a756e79616e7a2e6769746875622e696f2f4379636c6547414e2f696d616765732f6f626a656374732e6a7067)
+![Mappings](https://camo.githubusercontent.com/2fadde78dccf4d61f1294933c3e8083c07a303c7/68747470733a2f2f6a756e79616e7a2e6769746875622e696f2f4379636c6547414e2f696d616765732f6f626a656374732e6a7067)
 
 ## Prerequisites
 
