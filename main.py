@@ -4,7 +4,6 @@ from Preprocessing import save_expanded, encode_oneHot, load_embeddings, convert
 #import tensorflow.keras.datasets as datasets  
 from model import zsModel
 import matplotlib.pyplot as plt
-import sklearn.manifold as fold
 from cycleGAN import zsCycle
 
 def main():
