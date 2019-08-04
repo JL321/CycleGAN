@@ -2,7 +2,7 @@
 
 Tensorflow implementation of (https://arxiv.org/pdf/1703.10593.pdf). 
 
-### Overview
+## Overview
 
 Cycle Consistent GANs are an adaptation of Generative Adversarial Networks, in which the resulting model has the capability of performing domain adaptation between two datasets of varying domains. Again- unpaired! Images between datasets don't need to be directly matched, as the additional cycle consistency term added within the CycleGAN model allows for additional stability within training - of which pressures output domains to be consistent.
 
@@ -10,7 +10,7 @@ Cycle Consistent GANs are an adaptation of Generative Adversarial Networks, in w
 
 Sample mappings shown above.
 
-### Prerequisites
+## Prerequisites
 
 Dataset available at https://github.com/junyanz/CycleGAN (horse2zebra). Alter path names in main for local directory for proper usage. 
 
@@ -20,7 +20,7 @@ Packages Required in Environment:
 - Numpy
 - Matplotlib
 
-### Running
+## Running
 
 To execute the program, use the following command whilst in terminal:
 ```
