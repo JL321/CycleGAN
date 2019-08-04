@@ -4,7 +4,6 @@ from ops import resnet_layer, batch_layer, instance_conv, custom_dense, custom_c
 import tensorflow.contrib.layers as layer
 import random
 import matplotlib.pyplot as plt
-from Preprocessing import cifar10_wlabel
 
 base_size = (None, 160, 160, 3)
 embed_size = (None, 100)
