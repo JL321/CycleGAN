@@ -6,27 +6,15 @@ Tensorflow implementation of (https://arxiv.org/pdf/1703.10593.pdf). CycleGANs a
 
 These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. See deployment for notes on how to deploy the project on a live system.
 
-### Installing
+### Prerequisites
 
-A step by step series of examples that tell you how to get a development env running
+Dataset available at https://github.com/junyanz/CycleGAN (horse2zebra). Alter path names in main for local directory for proper usage. 
 
-Say what the step will be
-
-```
-Give the example
-```
-
-And repeat
-
-```
-until finished
-```
-
-End with an example of getting some data out of the system or using it for a little demo
-
-## Running the tests
-
-Explain how to run the automated tests for this system
+Packages Required in Environment:
+- Tensorflow
+- CV2
+- Numpy
+- Matplotlib
 
 ### Break down into end to end tests
 
