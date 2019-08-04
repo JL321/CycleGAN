@@ -2,7 +2,7 @@
 
 Tensorflow implementation of (https://arxiv.org/pdf/1703.10593.pdf). 
 
-![alt text](https://www.google.com/url?sa=i&source=images&cd=&ved=2ahUKEwjuhpaelOrjAhXEQc0KHTSCAzMQjRx6BAgBEAU&url=https%3A%2F%2Fgithub.com%2Fjunyanz%2FCycleGAN&psig=AOvVaw1J9kT7XyBWuh8x92hG8L57&ust=1565040473523006)
+![alt text](https://camo.githubusercontent.com/2fadde78dccf4d61f1294933c3e8083c07a303c7/68747470733a2f2f6a756e79616e7a2e6769746875622e696f2f4379636c6547414e2f696d616765732f6f626a656374732e6a7067)
 
 ### Overview
 
