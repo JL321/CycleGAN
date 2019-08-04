@@ -1,7 +1,6 @@
 import numpy as np
 import tensorflow as tf
 from Preprocessing import save_expanded, encode_oneHot, load_embeddings, convert_format, closest_vectors
-#import tensorflow.keras.datasets as datasets  
 from model import zsModel
 import matplotlib.pyplot as plt
 from cycleGAN import zsCycle
@@ -14,9 +13,7 @@ def main():
     
     #save_expanded()
 
-    zsl_dict = None
     train_classes = ['airplane', 'automobile', 'bird', 'cat', 'deer', 'dog', 'frog', 'horse', 'ship', 'truck']
-    seen_labels = []
     relevant_classes = train_classes 
     
     x_train_a = np.load("data/trainA.npy")
