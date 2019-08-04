@@ -12,7 +12,7 @@ Sample mappings shown above.
 
 ## Prerequisites
 
-Dataset available at https://github.com/junyanz/CycleGAN (horse2zebra). Alter path names in main for local directory for proper usage. 
+Dataset available at https://github.com/junyanz/CycleGAN (horse2zebra preferred). Alter path names in main for local directory for proper usage. Other datasets may be used at the user's discretion. 
 
 Packages Required in Environment:
 - Tensorflow
