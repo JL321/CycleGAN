@@ -361,12 +361,11 @@ class zsCycle:
             else:
                 return fake
     
-    def train(self, data_A, label_A, data_B, epochs, lookup_embed, train_class, continue_train = False):
+    def train(self, data_A, label_A, data_B, epochs, train_class, continue_train = False):
         
         #data_A = images
         #label_A = corresponding word labels
         #data_B = embeddings
-        #lookup_embed = Dictionary for embedding labels
         val = 0
         print("INITIALIZING TRAINING WITH MODEL {}".format(self.name))
         #Data_embed- collection of arbitrary word vectors
