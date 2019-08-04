@@ -1,4 +1,4 @@
-# Cycle Generative Adversarial Networks
+# Cycle Consistent Generative Adversarial Networks
 
 Tensorflow implementation of (https://arxiv.org/pdf/1703.10593.pdf). CycleGANs allow for domain-to-domain mapping between datasets, in which a cycle reconstruction loss is used for additional stability during training.
 
