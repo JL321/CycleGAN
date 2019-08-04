@@ -70,7 +70,7 @@ def convert_format(path, label):
     print("{} and {}".format(path, files[0]))
     for i,file in enumerate(files):
         img = cv2.imread(os.path.join(path, file), 1)
-        img = cv2.resize(img, dsize = (60, 60), interpolation = cv2.INTER_CUBIC)
+        img = cv2.resize(img, dsize = (160, 160), interpolation = cv2.INTER_CUBIC)
         imgList.append(img)
         labelList.append(label)
     return imgList, labelList
