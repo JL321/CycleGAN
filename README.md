@@ -2,10 +2,6 @@
 
 Tensorflow implementation of (https://arxiv.org/pdf/1703.10593.pdf). CycleGANs allow for domain-to-domain mapping between datasets, in which a cycle reconstruction loss is used for additional stability during training.
 
-## Getting Started
-
-These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. See deployment for notes on how to deploy the project on a live system.
-
 ### Prerequisites
 
 Dataset available at https://github.com/junyanz/CycleGAN (horse2zebra). Alter path names in main for local directory for proper usage. 
